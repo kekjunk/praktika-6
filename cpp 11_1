@@ -1,0 +1,13 @@
+//Практика 11 задание 1
+#include <iostream>
+#include <array>
+#include <iomanip>
+#include <numeric> 
+
+int main() {
+    std::array<int, 10> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int sum = std::accumulate(arr.begin(), arr.end(), 0);
+    double average = static_cast<double>(sum) / arr.size();
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "The average value: " << average << std::endl;
+}

@@ -1,0 +1,20 @@
+//Практика 11 задание 4
+#include <iostream>
+#include <forward_list>
+int main() {
+    std::forward_list<int> list;
+    list.push_front(5);
+    list.push_front(4); 
+    list.push_front(3);
+    list.push_front(2);
+    list.push_front(1);
+    
+    std::cout << "[";
+    bool first = true;
+    for (const auto& num : list) {
+        if (!first) std::cout << ", ";
+        std::cout << num;
+        first = false;
+    }
+    std::cout << "]" << std::endl;
+}

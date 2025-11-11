@@ -1,0 +1,27 @@
+//Практика 11 задание 3
+#include <iostream>
+#include <list>
+#include <string>
+#include <algorithm>
+
+int main() {
+    std::list<std::string> students = {"Ivanov", "Petrov", "Sidorov", "Alexeev", "Borisov"};
+    
+    std::cout << "Initial list:" << std::endl;
+    for (const auto& surname : students) {
+        std::cout << surname << std::endl;
+    }
+    students.sort();
+    std::cout << "\nSorted List:" << std::endl;
+    for (const auto& surname : students) {
+        std::cout << surname << std::endl;
+    }
+    students.remove_if([](const std::string& surname) {
+        return !surname.empty() && surname[0] == 'A';
+    });
+    
+    std::cout << "\nThe list after deleting the last names on 'А':" << std::endl;
+    for (const auto& surname : students) {
+        std::cout << surname << std::endl;
+    }
+}

@@ -1,0 +1,21 @@
+//Практика 11 задание 5
+#include <iostream>
+#include <list>
+
+int main() {
+    std::list<int> a = {1, 3, 5, 7};
+    std::list<int> b = {2, 3, 6, 7, 8};    
+    std::cout << "Source lists:" << std::endl;
+    std::cout << "a = {1, 3, 5, 7}" << std::endl;
+    std::cout << "b = {2, 3, 6, 7, 8}" << std::endl;
+    a.merge(b);
+    a.unique();
+    a.remove_if([](int x) { return x > 6; });    
+    std::cout << "\nResult:" << std::endl;
+    std::cout << "a = {";
+    for (auto it = a.begin(); it != a.end(); ++it) {
+        if (it != a.begin()) std::cout << ", ";
+        std::cout << *it;
+    }
+    std::cout << "}" << std::endl;
+}
